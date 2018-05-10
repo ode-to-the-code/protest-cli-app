@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+#- this is the shebang line
+
+# require 'pry'
+
+#this is the CLI controller in MVC terms
+
+# tried to run ./bin/protest-cli-app like in
+# but got 'permission denied error'
+
+require './lib/protest_cli_app'
+
+
+puts "hello world!"
+
+ProtestCliApp::CLI.new.call
