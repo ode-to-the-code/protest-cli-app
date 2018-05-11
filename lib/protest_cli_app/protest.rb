@@ -49,6 +49,7 @@ class ProtestCliApp::Protest
 
       # binding.pry
 
+
       protest
       # binding.pry
 
