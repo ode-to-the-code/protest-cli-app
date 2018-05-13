@@ -4,10 +4,10 @@ require 'pry'
 
 
 class ProtestCliApp::Protest
-  attr_accessor :name, :venue, :time, :url, :attendees, :city
+  attr_accessor :title, :author, :description
 
   def self.today
-    self.scrape_protests
+    self.scrape_nyt
   end
     # should return a bunch of instances of protests happening today
     #scrape protests from the webiste and return protest objects based onthat data
@@ -25,34 +25,41 @@ class ProtestCliApp::Protest
     # you'd have a bunch a of li's or whatever, and each one would correspond to some
     # event. might be in avi's video
 
-    def self.scrape_protests
+    def self.scrape_nyt
       protests = []
       # go to target site
       #extract protest properties
       #instantiate a protest
       # ultimately i want an array of protests i scraped. grab and push them to array
 
-      protests << self.scrape_moveon
+      protests << self.scrape_nyt
       protests
 
     end
 
-    def self.scrape_moveon
-      doc = Nokogiri::HTML(open("https://act.moveon.org/event/mueller-firing-rapid-response-events/search/"))
+    def self.scrape_nyt
+
+      # can maybe do an each loop or collect where all these attributes are in the
+      #body, so book.title and so on get added as each book object comes up in the loop
+      doc = Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/2018/01/14/"))
       # binding.pry
-      protest = self.new
-      protest.name = doc.search("a.event-title").text.strip
-      protest.venue = doc.search("div.event-venue").text.strip
-      protest.attendees = doc.search("div.event-attendee-count").text.strip
-      protest.city = doc.search("div.event-city-etc").text.strip
-      # binding.pry
+      
+      book = self.new
+      book.title = doc.search("h3.title").text.strip
+      book.author = doc.search("div.event-venue").text.strip
+      book.description = doc.search("div.event-attendee-count").text.strip
+      binding.pry
 
       # binding.pry
 
 
-      protest
+      book
       # binding.pry
 
+    end
+
+    def reload!
+      load './lib/protest_cli_app/protest.rb'
     end
 
 
