@@ -1,8 +1,8 @@
 # ProtestCliApp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/protest_cli_app`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem communicates with the New York Times list of bestselling books. It pulls a list
+of bestsellers and lets you choose a book to learn more about. It then gives you a brief
+description of the book that you choose.
 
 ## Installation
 
