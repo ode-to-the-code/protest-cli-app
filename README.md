@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+First you run './bin/protest-cli-app' in your terminal. The app should offer you
+a list of bestselling books. At the end of the list will be simple instructions.
+You can enter a number, like '1' or '2', and see more information about the corresponding
+book on the list. You can also type 'list' to see the list again, or 'exit' to leave the program.
 
 ## Development
 
