@@ -18,7 +18,7 @@ class ProtestCliApp::CLI
 
     @books = ProtestCliApp::Protest.today
     @books.each.with_index(1) do |book, i|
-      puts "#{i}. #{book.name}- #{book.venue} - #{book.city} - #{book.attendees} "
+      puts "#{i}. #{book.title}- #{book.author}"
     end
   end
 
@@ -30,7 +30,7 @@ class ProtestCliApp::CLI
       input = gets.strip.downcase
 
     if input.to_i > 0
-      puts @books[input.to_i - 1]
+      puts @books[input.to_i - 1].description
     elsif input == "list"
       list_books
     else
