@@ -12,6 +12,6 @@
 require './lib/protest_cli_app'
 
 
-puts "hello world!"
+# puts "hello world!"
 
 ProtestCliApp::CLI.new.call
